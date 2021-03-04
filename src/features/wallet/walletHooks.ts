@@ -10,7 +10,11 @@ import {
 import { storageKeys } from "../../constants/constants";
 import { db } from "../../services/database/database";
 import { signWithBinanceChain } from "../../services/wallets/bsc";
-import { BridgeWallet, RenChain } from "../../utils/assetConfigs";
+import {
+  BridgeWallet,
+  getWalletConfigByName,
+  RenChain,
+} from "../../utils/assetConfigs";
 import { $renNetwork } from "../network/networkSlice";
 import {
   $isAuthenticating,
@@ -31,22 +35,6 @@ type WalletData = ReturnType<typeof useMultiwallet> & {
   deactivateConnector: () => void;
 };
 
-const resolveWallet = (provider: any) => {
-  if (provider?.isMetaMask) {
-    return BridgeWallet.METAMASKW;
-  }
-
-  if (provider?.chainId === "0x61" || provider?.chainId?.indexOf("Binance")) {
-    return BridgeWallet.BINANCESMARTW;
-  }
-
-  if (provider?.isMewConnect || provider?.isMEWConnect) {
-    return BridgeWallet.MEWCONNECTW;
-  }
-
-  return BridgeWallet.UNKNOWNW;
-};
-
 type UseWallet = (chain: string) => WalletData;
 
 export const useWallet: UseWallet = (chain) => {
@@ -58,11 +46,11 @@ export const useWallet: UseWallet = (chain) => {
   } = useMultiwallet();
   const { account = "", status = "disconnected" } =
     enabledChains?.[chain] || {};
-  const provider = enabledChains?.[chain]?.provider;
-  const symbol = resolveWallet(provider);
+  const mwChain = enabledChains?.[chain];
+  const provider = mwChain?.provider;
+  const symbol = getWalletConfigByName(mwChain?.name).symbol;
   const emptyFn = () => {};
-  const deactivateConnector =
-    enabledChains[chain]?.connector.deactivate || emptyFn;
+  const deactivateConnector = mwChain?.connector.deactivate || emptyFn;
 
   return {
     account,

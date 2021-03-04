@@ -8,7 +8,11 @@ import React, { FunctionComponent } from "react";
 import { BinanceMetamaskConnectorInfo } from "../../components/wallet/WalletHelpers";
 import { env } from "../../constants/environmentVariables";
 import { featureFlags } from "../../constants/featureFlags";
-import { RenChain } from "../../utils/assetConfigs";
+import {
+  BridgeWallet,
+  RenChain,
+  walletsConfig,
+} from "../../utils/assetConfigs";
 
 const networkMapping: Record<number, RenNetwork> = {
   1: RenNetwork.Mainnet,
@@ -31,7 +35,7 @@ export const walletPickerModalConfig = (targetEthChainId: number) => ({
   chains: {
     [RenChain.ethereum]: [
       {
-        name: "Metamask",
+        name: walletsConfig[BridgeWallet.METAMASKW].short,
         logo: "https://avatars1.githubusercontent.com/u/11744586?s=60&v=4s",
         connector: new EthereumInjectedConnector({
           debug: env.DEV,
@@ -41,7 +45,7 @@ export const walletPickerModalConfig = (targetEthChainId: number) => ({
       ...(featureFlags.enableMEWConnect
         ? [
             {
-              name: "MEW",
+              name: walletsConfig[BridgeWallet.MEWCONNECTW].short,
               logo:
                 "https://avatars1.githubusercontent.com/u/24321658?s=60&v=4s",
               connector: new EthereumMEWConnectConnector({
@@ -58,7 +62,7 @@ export const walletPickerModalConfig = (targetEthChainId: number) => ({
       ...(featureFlags.enableWalletConnect
         ? [
             {
-              name: "WalletConnect",
+              name: walletsConfig[BridgeWallet.WALLETCONNECTW].short,
               logo:
                 "https://avatars0.githubusercontent.com/u/37784886?s=60&v=4",
               connector: new EthereumWalletConnectConnector({
@@ -75,7 +79,7 @@ export const walletPickerModalConfig = (targetEthChainId: number) => ({
     ],
     [RenChain.binanceSmartChain]: [
       {
-        name: "BinanceSmartWallet",
+        name: walletsConfig[BridgeWallet.BINANCESMARTW].short,
         logo: "https://avatars2.githubusercontent.com/u/45615063?s=60&v=4",
         connector: new BinanceSmartChainInjectedConnector({ debug: true }),
       },
@@ -84,7 +88,7 @@ export const walletPickerModalConfig = (targetEthChainId: number) => ({
       ...(featureFlags.enableBSCMetamask
         ? [
             {
-              name: "Metamask",
+              name: walletsConfig[BridgeWallet.METAMASKW].short,
               logo:
                 "https://avatars2.githubusercontent.com/u/45615063?s=60&v=4",
               info: BinanceMetamaskConnectorInfo,

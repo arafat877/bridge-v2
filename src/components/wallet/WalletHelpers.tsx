@@ -23,7 +23,7 @@ import {
   getChainConfigByRentxName,
   getNetworkConfigByRentxName,
   getWalletConfig,
-  getWalletConfigByRentxName,
+  getWalletConfigByName,
 } from "../../utils/assetConfigs";
 import { trimAddress } from "../../utils/strings";
 import { ActionButton, ActionButtonWrapper } from "../buttons/Buttons";
@@ -93,7 +93,7 @@ export const WalletEntryButton: WalletPickerProps<
   any
 >["WalletEntryButton"] = ({ onClick, name, logo }) => {
   const { icon: iconClassName, ...classes } = useWalletEntryButtonStyles();
-  const walletConfig = getWalletConfigByRentxName(name);
+  const walletConfig = getWalletConfigByName(name);
   const { MainIcon } = walletConfig;
   return (
     <Button

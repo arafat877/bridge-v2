@@ -579,7 +579,6 @@ export const toReleasedCurrency = (burnedCurrency: BridgeCurrency) => {
 export type BridgeWalletConfig = LabelsConfig &
   ColorsConfig &
   MainIconConfig & {
-    rentxName: string;
     symbol: BridgeWallet;
     chain: BridgeChain;
   };
@@ -592,16 +591,14 @@ export const walletsConfig: Record<BridgeWallet, BridgeWalletConfig> = {
     Icon: NotSetIcon,
     MainIcon: MetamaskFullIcon,
     chain: BridgeChain.ETHC,
-    rentxName: "Metamask",
   },
   [BridgeWallet.WALLETCONNECTW]: {
     symbol: BridgeWallet.WALLETCONNECTW,
-    short: "MetaMask",
-    full: "MetaMask Wallet",
+    short: "WalletConnect",
+    full: "WalletConnect",
     Icon: NotSetIcon,
     MainIcon: WalletConnectFullIcon,
     chain: BridgeChain.ETHC,
-    rentxName: "walletconnect",
   },
   [BridgeWallet.BINANCESMARTW]: {
     symbol: BridgeWallet.BINANCESMARTW,
@@ -610,7 +607,6 @@ export const walletsConfig: Record<BridgeWallet, BridgeWalletConfig> = {
     Icon: NotSetIcon,
     MainIcon: BinanceChainFullIcon,
     chain: BridgeChain.BSCC,
-    rentxName: "BinanceSmartWallet",
   },
   [BridgeWallet.MEWCONNECTW]: {
     symbol: BridgeWallet.UNKNOWNW,
@@ -619,7 +615,6 @@ export const walletsConfig: Record<BridgeWallet, BridgeWalletConfig> = {
     Icon: NotSetIcon,
     MainIcon: MewFullIcon,
     chain: BridgeChain.ETHC,
-    rentxName: "MEW",
   },
   [BridgeWallet.UNKNOWNW]: {
     symbol: BridgeWallet.UNKNOWNW,
@@ -628,7 +623,6 @@ export const walletsConfig: Record<BridgeWallet, BridgeWalletConfig> = {
     Icon: NotSetIcon,
     MainIcon: NotSetIcon,
     chain: BridgeChain.UNKNOWNC,
-    rentxName: "unknown",
   },
 };
 
@@ -637,8 +631,8 @@ const unknownWalletConfig = walletsConfig[BridgeWallet.UNKNOWNW];
 export const getWalletConfig = (symbol: BridgeWallet) =>
   walletsConfig[symbol] || unknownWalletConfig;
 
-export const getWalletConfigByRentxName = (name: string) =>
-  Object.values(walletsConfig).find((wallet) => wallet.rentxName === name) ||
+export const getWalletConfigByName = (name: string) =>
+  Object.values(walletsConfig).find((wallet) => wallet.short === name) ||
   unknownWalletConfig;
 
 // FIXME: hacky, lets not have two different enums for the same things (supported networks)
