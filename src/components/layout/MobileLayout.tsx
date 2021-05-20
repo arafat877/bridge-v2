@@ -5,7 +5,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import React, { FunctionComponent, ReactNode, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { HomeMenuIconButton } from "../buttons/Buttons";
-import { BetaIcon, RenBridgeLogoIcon } from "../icons/RenIcons";
+import { BetaIcon, MoonbeamRenBridgeLogoIcon } from "../icons/RenIcons";
 import { Footer } from "./Footer";
 
 const headerHeight = 82;
@@ -132,7 +132,7 @@ export const MobileLayout: FunctionComponent<MobileLayoutProps> = ({
               <Toolbar>
                 <div className={styles.logo}>
                   <Link to="/">
-                    <RenBridgeLogoIcon />
+                    <MoonbeamRenBridgeLogoIcon />
                   </Link>
                   <BetaIcon className={styles.beta} />
                 </div>
