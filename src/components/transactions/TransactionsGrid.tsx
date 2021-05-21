@@ -34,6 +34,7 @@ const useTransactionsHeaderStyles = makeStyles((theme) => ({
     background: theme.palette.common.white,
     boxShadow: standardShadow,
     display: "flex",
+    flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "center",
   },
@@ -42,6 +43,7 @@ const useTransactionsHeaderStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     marginLeft: theme.spacing(2),
+    flexDirection: "column",
   },
 }));
 

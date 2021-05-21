@@ -9,7 +9,9 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.main,
     padding: 10,
     borderRadius: 5,
-    boxShadow: defaultShadow
+    boxShadow: defaultShadow,
+    margin: "1em",
+    overflow: "scroll",
   },
   wrapper: {
     background: "gray",

@@ -22,11 +22,11 @@ const useLabelWithValueStyles = makeStyles((theme) => ({
   labelWrapper: {
     flexShrink: 0,
     maxWidth: "50%",
-    color: theme.palette.grey[600],
+    color: theme.palette.divider,
   },
   labelTooltip: {
     marginLeft: 4,
-    color: theme.palette.grey[600],
+    color: theme.palette.divider,
   },
   labelTooltipIcon: {
     fontSize: 12,
@@ -36,13 +36,12 @@ const useLabelWithValueStyles = makeStyles((theme) => ({
     flexGrow: 1,
     overflow: "hidden",
     textAlign: "right",
-    color: theme.palette.common.black,
   },
   value: {
     whiteSpace: "nowrap",
   },
   valueEquivalent: {
-    color: theme.palette.grey[600],
+    color: theme.palette.divider,
     marginLeft: 4,
   },
 }));
@@ -110,7 +109,7 @@ const useReceivingAssetInfoStyle = makeStyles((theme) => ({
   },
   valueEquivalent: {
     fontSize: 13,
-    color: theme.palette.grey[600],
+    color: theme.palette.divider,
   },
 }));
 

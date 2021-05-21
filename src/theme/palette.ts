@@ -14,7 +14,7 @@ const basePalette = {
   primary: {
     light: "#F2A007", //yellow
     main: "#53CBC9", // 53CBC9 // 3D1D5A
-    dark: graphiteDark,
+    dark: "#001933",
     contrastText: white,
   },
   secondary: {

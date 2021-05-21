@@ -62,6 +62,7 @@ const useAssetDropdownStyles = makeStyles((theme) => ({
   },
   inputRoot: {
     width: "100%",
+    backgroundColor: theme.palette.common.white,
   },
   supplementalText: {
     fontSize: 12,

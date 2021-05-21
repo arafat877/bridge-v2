@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "SuisseIntl", "Helvetica", "Arial", sans-serif;
+  font-family: "Open sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
@@ -27,8 +27,7 @@ body::before {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: "Open sans", sans-serif
 }
 
 #notifications > div {

@@ -23,7 +23,7 @@ export const MediumWrapper = styled("div")({
 });
 
 export const BigWrapper = styled("div")({
-  marginBottom: 40,
+  margin: 40,
 });
 
 export const SmallTopWrapper = styled("div")({

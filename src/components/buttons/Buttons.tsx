@@ -180,11 +180,12 @@ const useCopyContentButtonStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "stretch",
     maxWidth: 320,
+    margin: "auto",
   },
   content: {
     flexGrow: 2,
     fontSize: 13,
-    borderRadius: 20,
+    borderRadius: 10,
     marginRight: 10,
     color: blue,
     backgroundColor: skyBlueLighter,
@@ -376,7 +377,7 @@ export const BigQrCode = styled("div")(({ theme }) => ({
   width: 132,
   height: 132,
   padding: 15,
-  borderRadius: 20,
+  borderRadius: 10,
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -473,10 +474,8 @@ export const TransactionHistoryMenuIconButton: FunctionComponent<TransactionHist
 
 const useActionButtonStyles = makeStyles((theme) => ({
   root: { 
-    maxWidth: 360,
-    "&:hover": {
-      backgroundColor: theme.palette.divider,
-      color: theme.palette.secondary.main
+    "&:disabled": {
+      backgroundColor: "rgba(255,255,255,.6)",
     }
   },
 }));
@@ -498,6 +497,7 @@ export const ActionButton: FunctionComponent<ButtonProps> = ({ ...props }) => {
 export const ActionButtonWrapper = styled("div")(() => ({
   display: "flex",
   justifyContent: "center",
+  width: "100%"
 }));
 
 const useSmallActionButtonStyles = makeStyles({
