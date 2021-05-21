@@ -20,6 +20,8 @@ export const useMobileLayoutStyles = makeStyles((theme: Theme) => ({
     paddingTop: 1,
     marginTop: -1,
     minHeight: `calc(100vh - ${headerHeight + footerHeight}px)`,
+    display: "flex",
+    justifyContent: "space-between"
   },
   logo: {
     display: "flex",

@@ -388,15 +388,25 @@ export const BigQrCode = styled("div")(({ theme }) => ({
 const useMenuIconButtonStyles = makeStyles((theme) => ({
   root: {
     padding: 6,
-    color: theme.palette.secondary.light,
+    color: theme.customColors.lightPink,
     border: `1px solid ${theme.palette.divider}`,
     backgroundColor: theme.palette.common.white,
     boxShadow: defaultShadow,
+    mozTransition: "all .2s linear",
+    "-o-transition": "all .2s linear",
+    "-webkit-transition": "all .2s linear",
+    transition: "all .2s linear",
+    backgroundSize: "300% 100%",
     "&:hover": {
-      backgroundColor: theme.palette.divider,
+      backgroundColor: theme.customColors.lightPink,
       "@media (hover: none)": {
         backgroundColor: "transparent",
       },
+      backgroundPosition: "100% 0",
+      "moz-transition": "all .2s linear",
+      "-o-transition": "all .2s linear",
+      "-webkit-transition": "all .2s linear",
+      transition: "all .2s linear",
     },
   },
   label: {
@@ -461,9 +471,15 @@ export const TransactionHistoryMenuIconButton: FunctionComponent<TransactionHist
   );
 };
 
-const useActionButtonStyles = makeStyles({
-  root: { maxWidth: 360 },
-});
+const useActionButtonStyles = makeStyles((theme) => ({
+  root: { 
+    maxWidth: 360,
+    "&:hover": {
+      backgroundColor: theme.palette.divider,
+      color: theme.palette.secondary.main
+    }
+  },
+}));
 
 export const ActionButton: FunctionComponent<ButtonProps> = ({ ...props }) => {
   const styles = useActionButtonStyles();
@@ -480,7 +496,6 @@ export const ActionButton: FunctionComponent<ButtonProps> = ({ ...props }) => {
 };
 
 export const ActionButtonWrapper = styled("div")(() => ({
-  marginTop: 20,
   display: "flex",
   justifyContent: "center",
 }));

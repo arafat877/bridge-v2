@@ -15,6 +15,7 @@ const useBridgePaperStyles = makeStyles((theme) => {
       maxWidth: 400,
       margin: "70px auto 0",
       position: "relative",
+      border: `1px solid ${theme.customColors.lightPink}`
     },
   };
 });

@@ -1,8 +1,5 @@
 import createPalette, { Palette } from '@material-ui/core/styles/createPalette'
 import {
-  blue,
-  blueDark,
-  blueLight,
   graphite,
   graphiteDark,
   graphiteLight,
@@ -15,9 +12,9 @@ import {
 
 const basePalette = {
   primary: {
-    light: blueLight,
-    main: blue,
-    dark: blueDark,
+    light: "#F2A007", //yellow
+    main: "#53CBC9", // 53CBC9 // 3D1D5A
+    dark: graphiteDark,
     contrastText: white,
   },
   secondary: {

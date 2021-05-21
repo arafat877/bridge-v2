@@ -14,6 +14,9 @@ import {
   textDark,
   textDisabled,
   textLighter,
+  lightPink,
+  pink,
+  white
 } from "./colors";
 
 export const overrides = (palette: Palette): Overrides => {
@@ -59,6 +62,7 @@ export const overrides = (palette: Palette): Overrides => {
     MuiButton: {
       root: {
         fontSize: 16,
+        borderRadius: 50,
       },
       containedSizeLarge: {
         padding: "13px 22px",
@@ -101,6 +105,11 @@ export const overrides = (palette: Palette): Overrides => {
         padding: `36px 40px`,
       },
     },
+    MuiDivider: {
+      root: {
+        backgroundColor: lightPink,
+      }
+    },
     MuiDrawer: {
       paper: {
         padding: 20,
@@ -109,6 +118,16 @@ export const overrides = (palette: Palette): Overrides => {
         borderBottomLeftRadius: 20,
         borderTopLeftRadius: 20,
       },
+    },
+    MuiFab: {
+      primary: {
+        backgroundColor: lightPink,
+        color: white,
+        "&:hover": {
+          backgroundColor: palette.divider,
+          color: lightPink,
+        }
+      }
     },
     MuiFormControlLabel: {
       root: {
@@ -134,6 +153,9 @@ export const overrides = (palette: Palette): Overrides => {
       },
     },
     MuiOutlinedInput: {
+      root: {
+        borderRadius: 5,
+      },
       input: {
         paddingRight: 20,
         paddingLeft: 20,
@@ -156,6 +178,12 @@ export const overrides = (palette: Palette): Overrides => {
       elevation8: {
         boxShadow: "0px 1px 20px rgba(0, 27, 58, 0.05)",
       },
+      root: {
+        borderRadius: 10,
+      },
+      rounded: {
+        borderRadius: 10
+      }
     },
     MuiSelect: {
       root: {
@@ -165,6 +193,11 @@ export const overrides = (palette: Palette): Overrides => {
         "&:focus": {
           backgroundColor: "initial",
         },
+      },
+      selectMenu: {
+        display: "flex",
+        minHeight: 0,
+        height: 15,
       },
       outlined: {
         background: "white",
@@ -195,6 +228,13 @@ export const overrides = (palette: Palette): Overrides => {
       indicator: {
         display: "none",
       },
+      flexContainer: {
+        borderRadius: "9px 9px 0 0",
+        borderBottom: `1px solid ${lightPink}`
+      },
+      root: {
+        borderRadius: "9px 9px 0 0"
+      }
     },
     MuiTab: {
       root: {
@@ -204,8 +244,10 @@ export const overrides = (palette: Palette): Overrides => {
         color: textLighter,
         opacity: 1,
         "&$selected": {
-          color: textDark,
+          color: white,
+          backgroundColor: lightPink,
           fontWeight: 500,
+          fontSize: "1em",
         },
         "&$disabled": {
           color: textDisabled,
