@@ -180,11 +180,12 @@ const useCopyContentButtonStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "stretch",
     maxWidth: 320,
+    margin: "auto",
   },
   content: {
     flexGrow: 2,
     fontSize: 13,
-    borderRadius: 20,
+    borderRadius: 10,
     marginRight: 10,
     color: blue,
     backgroundColor: skyBlueLighter,
@@ -376,7 +377,7 @@ export const BigQrCode = styled("div")(({ theme }) => ({
   width: 132,
   height: 132,
   padding: 15,
-  borderRadius: 20,
+  borderRadius: 10,
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -388,12 +389,12 @@ export const BigQrCode = styled("div")(({ theme }) => ({
 const useMenuIconButtonStyles = makeStyles((theme) => ({
   root: {
     padding: 6,
-    color: theme.palette.secondary.light,
+    color: theme.customColors.lightPink,
     border: `1px solid ${theme.palette.divider}`,
     backgroundColor: theme.palette.common.white,
     boxShadow: defaultShadow,
     "&:hover": {
-      backgroundColor: theme.palette.divider,
+      backgroundColor: theme.customColors.lightPink,
       "@media (hover: none)": {
         backgroundColor: "transparent",
       },
@@ -461,9 +462,13 @@ export const TransactionHistoryMenuIconButton: FunctionComponent<TransactionHist
   );
 };
 
-const useActionButtonStyles = makeStyles({
-  root: { maxWidth: 360 },
-});
+const useActionButtonStyles = makeStyles((theme) => ({
+  root: { 
+    "&:disabled": {
+      backgroundColor: "rgba(255,255,255,.6)",
+    }
+  },
+}));
 
 export const ActionButton: FunctionComponent<ButtonProps> = ({ ...props }) => {
   const styles = useActionButtonStyles();
@@ -480,9 +485,9 @@ export const ActionButton: FunctionComponent<ButtonProps> = ({ ...props }) => {
 };
 
 export const ActionButtonWrapper = styled("div")(() => ({
-  marginTop: 20,
   display: "flex",
   justifyContent: "center",
+  width: "100%"
 }));
 
 const useSmallActionButtonStyles = makeStyles({

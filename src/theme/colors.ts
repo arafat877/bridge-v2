@@ -1,3 +1,8 @@
+/* Moonbeam Colors */
+export const pink = "#E1147B";
+export const lightPink = "#EA5AA2";
+
+/* Common Colors */
 export const skyBlueLighter = "#F1F7FE";
 export const skyBlueLight = "#DAEBFF";
 export const skyBlue = "#C1DEFF";

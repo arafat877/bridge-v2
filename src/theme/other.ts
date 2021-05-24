@@ -3,7 +3,7 @@ import { Shape } from "@material-ui/core/styles/shape";
 import { getShadow } from './animationUtils'
 
 export const shape: Partial<Shape> = {
-  borderRadius: 20,
+  borderRadius: 10,
 };
 
 export const breakpoints: Partial<Breakpoints> = {

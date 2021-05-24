@@ -42,6 +42,8 @@ export const useWalletPickerStyles = makeStyles((theme) => ({
   root: {
     width: 400,
     minHeight: 441,
+    backgroundColor: theme.palette.common.white,
+    color: theme.palette.primary.main,
   },
   body: {
     padding: 24,
@@ -303,11 +305,13 @@ const getWalletConnectionLabel = (status: WalletConnectionStatusType) => {
 const useWalletConnectionStatusButtonStyles = makeStyles<Theme>((theme) => ({
   root: {
     backgroundColor: theme.palette.common.white,
-    borderColor: theme.palette.divider,
+    borderColor: theme.customColors.lightPink,
     boxShadow: defaultShadow,
+    color: theme.customColors.lightPink,
     "&:hover": {
       borderColor: theme.palette.divider,
-      backgroundColor: theme.palette.divider,
+      backgroundColor: theme.customColors.lightPink,
+      color: theme.palette.common.white,
     },
   },
   hoisted: {

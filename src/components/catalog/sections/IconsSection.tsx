@@ -4,7 +4,7 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import RedditIcon from "@material-ui/icons/Reddit";
 import TelegramIcon from "@material-ui/icons/Telegram";
 import TwitterIcon from "@material-ui/icons/Twitter";
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { IconWithLabel } from "../../icons/IconHelpers";
 import {
   BackArrowIcon,
@@ -41,7 +41,7 @@ import {
   LunaGreyIcon,
   LunaIcon,
   MetamaskFoxIcon,
-  RenBridgeLogoIcon,
+  MoonbeamRenBridgeLogoIcon,
   RenLogoFullIcon,
   RenLogoIcon,
   RenVMLogoIcon,
@@ -126,7 +126,7 @@ export const IconsSection: FunctionComponent = () => {
         <FilGreyIcon />
       </SeparationWrapper>
       <SeparationWrapper>
-        <RenBridgeLogoIcon />
+        <MoonbeamRenBridgeLogoIcon />
         <RenLogoFullIcon />
         <RenVMLogoIcon />
         <Box bgcolor="gray" display="inline-block" p={1}>

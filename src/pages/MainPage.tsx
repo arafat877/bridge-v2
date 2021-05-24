@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { RouteComponentProps } from "react-router";
 import { Route } from "react-router-dom";
 import {
-  BridgePaperWrapper,
   BridgePurePaper,
 } from "../components/layout/Paper";
 import { storageKeys } from "../constants/constants";
@@ -35,12 +34,12 @@ const MainPage: FunctionComponent<RouteComponentProps> = ({
     <>
       <ConnectedMainLayout>
         <PaperTitleProvider>
-          <BridgePaperWrapper>
+          <div>
             <BridgePurePaper shaking={paperShaking}>
               <Route path={paths.MINT} component={MintFlow} />
               <Route path={paths.RELEASE} component={ReleaseFlow} />
             </BridgePurePaper>
-          </BridgePaperWrapper>
+          </div>
         </PaperTitleProvider>
       </ConnectedMainLayout>
     </>

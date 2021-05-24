@@ -3,6 +3,7 @@ import { makeStyles, styled } from '@material-ui/core/styles'
 import classNames from 'classnames'
 import React, { FunctionComponent, ReactNode, useRef } from 'react'
 import NumberFormat, { NumberFormatValues } from 'react-number-format'
+import { lightPink } from '../../theme/colors'
 import { generatePlaceholderStyles } from '../../theme/themeUtils'
 import { numberFormatOptions, toUsdFormat } from '../../utils/formatters'
 
@@ -14,28 +15,24 @@ const useStyles = makeStyles((theme) => ({
       fontFamily: "inherit",
     },
   },
-  large: {
-    "& input": {
-      fontSize: 52,
-    },
-  },
-  medium: {
-    "& input": {
-      fontSize: 42,
-    },
-  },
   small: {
     "& input": {
       fontSize: 32,
+      height: "1em",
+      padding: ".25em 0",
     },
   },
   smallest: {
     "& input": {
       fontSize: 22,
+      height: "1em",
+      padding: ".25em 0",
     },
   },
   input: {
-    fontSize: 52,
+    fontSize: 32,
+    height: "1em",
+    padding: ".25em 0",
     width: "100%",
     outline: "none",
     textAlign: "center",
@@ -52,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
   equivalent: {
     marginTop: 0,
-    color: "#3F3F48",
+    color: lightPink,
   },
 }));
 
@@ -84,18 +81,12 @@ export const BigCurrencyInput: FunctionComponent<BigCurrencyInputProps> = ({
   };
 
   const chars = val.replace(".", "") + " " + symbol;
-  let size = "large";
-  if (chars.length > 10 && chars.length <= 12) {
-    size = "medium";
-  } else if (chars.length > 12 && chars.length <= 14) {
-    size = "small";
-  } else if (chars.length > 14) {
+  let size = "small";
+  if (chars.length > 14) {
     size = "smallest";
   }
 
   const rootClassName = classNames(styles.container, {
-    [styles.large]: size === "large",
-    [styles.medium]: size === "medium",
     [styles.small]: size === "small",
     [styles.smallest]: size === "smallest",
   });

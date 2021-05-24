@@ -8,13 +8,15 @@ import {
 import classNames from "classnames";
 import React, { FunctionComponent } from "react";
 import { useShakingStyles } from "../../theme/animationUtils";
+import { lightPink } from "../../theme/colors";
 
 const useBridgePaperStyles = makeStyles((theme) => {
   return {
     root: {
-      maxWidth: 400,
-      margin: "70px auto 0",
+      maxWidth: 550,
+      margin: "1em",
       position: "relative",
+      border: `1px solid ${lightPink}`
     },
   };
 });
@@ -54,10 +56,6 @@ export const BridgePaper: FunctionComponent<BridgePaperProps> = ({
   );
 };
 
-export const BridgePaperWrapper = styled("div")({
-  marginTop: 40,
-});
-
 const SMALL_PADDING = 10;
 const MEDIUM_PADDING = 20;
 const BIG_PADDING = 40;
@@ -88,7 +86,7 @@ const usePaperContentStyles = makeStyles<Theme, PaperContentProps>((theme) => ({
   darker: {
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
-    backgroundColor: theme.customColors.whiteDarker,
+    backgroundColor: theme.palette.primary.dark,
   },
 }));
 

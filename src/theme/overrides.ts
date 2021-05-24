@@ -11,10 +11,10 @@ import {
   alertSuccessBackground,
   alertWarning,
   alertWarningBackground,
-  textDark,
   textDisabled,
-  textLighter,
+  lightPink,
 } from "./colors";
+import { defaultShadow } from "./other";
 
 export const overrides = (palette: Palette): Overrides => {
   return {
@@ -59,11 +59,31 @@ export const overrides = (palette: Palette): Overrides => {
     MuiButton: {
       root: {
         fontSize: 16,
+        borderRadius: 50,
       },
       containedSizeLarge: {
         padding: "13px 22px",
         fontSize: 16,
       },
+      containedPrimary: {
+        backgroundColor: lightPink,
+        "&:hover": {
+          backgroundColor: palette.common.white,
+          color: lightPink,
+          border: `1px solid ${lightPink}`,
+        }
+      },
+      container: {
+        backgroundColor: palette.divider
+      }
+    },
+    MuiButtonBase: {
+      root: {
+        "&$disabled": {
+          backgroundColor: palette.divider,
+          width: "100%"
+        }
+      }
     },
     MuiChip: {
       root: {
@@ -80,6 +100,8 @@ export const overrides = (palette: Palette): Overrides => {
     MuiDialog: {
       paper: {
         minWidth: 320,
+        boxShadow: defaultShadow,
+        backgroundColor: palette.common.white,
       },
       paperWidthSm: {
         maxWidth: 680,
@@ -101,6 +123,11 @@ export const overrides = (palette: Palette): Overrides => {
         padding: `36px 40px`,
       },
     },
+    MuiDivider: {
+      root: {
+        backgroundColor: lightPink,
+      }
+    },
     MuiDrawer: {
       paper: {
         padding: 20,
@@ -110,19 +137,41 @@ export const overrides = (palette: Palette): Overrides => {
         borderTopLeftRadius: 20,
       },
     },
+    MuiFab: {
+      primary: {
+        color: lightPink,
+        backgroundColor: palette.common.white,
+        border: `1px solid ${palette.divider}`,
+        "&:hover": {
+          backgroundColor: palette.divider,
+        }
+      }
+    },
     MuiFormControlLabel: {
       root: {
         marginRight: 0,
       },
     },
+    MuiFormLabel: {
+      color: palette.primary.main
+    },
     MuiFilledInput: {
       root: {
         borderTopLeftRadius: 4,
         borderTopRightRadius: 4,
+        color: palette.common.white,
+        backgroundColor: "rgba(255, 255, 255, 0.04)",
+        border: `1px solid ${palette.primary.main}`
       },
+    },
+    MuiIconButton: {
+      label: {
+        color: palette.primary.main,
+      }
     },
     MuiInputBase: {
       // input: { ...generatePlaceholderStyles("ff0000") },
+      width: "20em",
     },
     MuiInputLabel: {
       outlined: {
@@ -134,6 +183,10 @@ export const overrides = (palette: Palette): Overrides => {
       },
     },
     MuiOutlinedInput: {
+      root: {
+        borderRadius: 5,
+        backgroundColor: palette.common.white,
+      },
       input: {
         paddingRight: 20,
         paddingLeft: 20,
@@ -143,6 +196,11 @@ export const overrides = (palette: Palette): Overrides => {
       root: {
         cursor: "pointer",
       },
+    },
+    MuiList: {
+      root: {
+        backgroundColor: palette.common.white,
+      }
     },
     MuiMobileStepper: {
       root: {
@@ -156,6 +214,14 @@ export const overrides = (palette: Palette): Overrides => {
       elevation8: {
         boxShadow: "0px 1px 20px rgba(0, 27, 58, 0.05)",
       },
+      root: {
+        borderRadius: 10,
+      },
+      rounded: {
+        borderRadius: 10,
+        backgroundColor: palette.primary.dark,
+        color: palette.primary.main
+      }
     },
     MuiSelect: {
       root: {
@@ -166,8 +232,14 @@ export const overrides = (palette: Palette): Overrides => {
           backgroundColor: "initial",
         },
       },
+      selectMenu: {
+        display: "flex",
+        minHeight: 0,
+        height: 15,
+        width: "20em"
+      },
       outlined: {
-        background: "white",
+        background: palette.common.white,
         boxShadow: `0 0 3px 0 rgba(0,27,58,0.10)`,
       },
     },
@@ -189,23 +261,39 @@ export const overrides = (palette: Palette): Overrides => {
     MuiSvgIcon: {
       root: {
         pointerEvents: "none",
+        color: lightPink,
       },
     },
     MuiTabs: {
       indicator: {
         display: "none",
       },
+      flexContainer: {
+        borderRadius: "9px 9px 0 0",
+        "&$selected": {
+          borderBottom: `1px solid ${lightPink}`
+        }
+      },
+      root: {
+        borderRadius: "9px 9px 0 0"
+      }
     },
     MuiTab: {
       root: {
         fontSize: 16,
       },
       textColorInherit: {
-        color: textLighter,
-        opacity: 1,
+        color: palette.common.white,
+        opacity: .7,
+        backgroundColor: lightPink,
         "&$selected": {
-          color: textDark,
+          color: palette.common.white,
+          backgroundColor: palette.primary.dark,
           fontWeight: 500,
+          fontSize: "1em",
+        },
+        "&:hover": {
+          opacity: 1,
         },
         "&$disabled": {
           color: textDisabled,
@@ -243,6 +331,11 @@ export const overrides = (palette: Palette): Overrides => {
         backgroundColor: palette.common.black,
         fontSize: 11,
       },
+    },
+    MuiTypography: {
+      colorTextPrimary: {
+        color: palette.common.white,
+      }
     },
   } as Overrides;
 };

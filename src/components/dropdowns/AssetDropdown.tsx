@@ -62,6 +62,7 @@ const useAssetDropdownStyles = makeStyles((theme) => ({
   },
   inputRoot: {
     width: "100%",
+    backgroundColor: theme.palette.common.white,
   },
   supplementalText: {
     fontSize: 12,
@@ -89,6 +90,21 @@ const useAssetDropdownStyles = makeStyles((theme) => ({
   listSubheaderLabel: {
     fontSize: 10,
   },
+  divider: {
+    width: "30%",
+    borderRight: `1px solid ${theme.palette.common.black}`,
+    marginRight: 20,
+  },
+  dropdown: {
+    display: "flex",
+    alignItems: "center",
+    width: "100%",
+  },
+  asset: {
+    width: 45,
+    display: "flex",
+    alignItems: "center",
+  }
 }));
 
 type AssetDropdownMode = "currency" | "chain";
@@ -138,15 +154,15 @@ export const AssetDropdown: FunctionComponent<AssetDropdownProps> = ({
       const selected = getOptionBySymbol(value, mode);
       const { Icon, full, short } = getAssetData(selected);
       return (
-        <Box display="flex" alignItems="center" width="100%">
+        <Box className={styles.dropdown}>
           {!condensed && (
-            <Box width="37%">
+            <Box className={styles.divider}>
               <Typography variant="body2" className={styles.supplementalText}>
                 {label}
               </Typography>
             </Box>
           )}
-          <Box width="45px" display="flex" alignItems="center">
+          <Box className={styles.asset}>
             <Icon className={styles.listIcon} />
           </Box>
           <Box flexGrow={1}>

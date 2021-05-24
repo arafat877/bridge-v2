@@ -135,7 +135,7 @@ const useNestedDrawerStyles = makeStyles((theme) => ({
     bottom: 0,
     left: 0,
     zIndex: "auto",
-    borderRadius: 20,
+    borderRadius: 10,
   },
   positioner: {
     position: "relative",

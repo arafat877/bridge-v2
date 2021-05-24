@@ -1,10 +1,19 @@
 import React, { FunctionComponent, useCallback, useState } from "react";
 import { makeStyles } from "@material-ui/core";
 import classNames from "classnames";
+import { defaultShadow } from "../../theme/other";
+import { lightPink } from "../../theme/colors";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
-    background: "lightgray",
+    backgroundColor: theme.palette.secondary.main,
+    color: theme.palette.primary.main,
+    padding: 10,
+    borderRadius: 5,
+    boxShadow: defaultShadow,
+    margin: "1em",
+    overflow: "scroll",
+    border: `1px solid ${lightPink}`
   },
   wrapper: {
     background: "gray",
@@ -20,7 +29,7 @@ const useStyles = makeStyles({
       height: "auto",
     },
   },
-});
+}));
 
 const off = process.env.NODE_ENV === "production";
 

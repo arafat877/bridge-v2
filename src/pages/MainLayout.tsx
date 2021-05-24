@@ -31,7 +31,7 @@ import React, {
 import { useDispatch, useSelector } from "react-redux";
 import { useWindowSize } from "react-use";
 import { TransactionHistoryMenuIconButton } from "../components/buttons/Buttons";
-import { RenBridgeLogoIcon } from "../components/icons/RenIcons";
+import { MoonbeamRenBridgeLogoIcon } from "../components/icons/RenIcons";
 import { Footer } from "../components/layout/Footer";
 import {
   MainLayoutVariantProps,
@@ -203,7 +203,7 @@ export const MainLayout: FunctionComponent<MainLayoutVariantProps> = ({
       PaperProps={{ className: styles.drawerPaper }}
     >
       <div className={styles.drawerHeader}>
-        <RenBridgeLogoIcon className={styles.drawerLogo} />
+        <MoonbeamRenBridgeLogoIcon className={styles.drawerLogo} />
         <IconButton
           aria-label="close"
           className={styles.drawerClose}
