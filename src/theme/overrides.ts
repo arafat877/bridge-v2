@@ -11,12 +11,8 @@ import {
   alertSuccessBackground,
   alertWarning,
   alertWarningBackground,
-  textDark,
   textDisabled,
-  textLighter,
   lightPink,
-  pink,
-  white
 } from "./colors";
 import { defaultShadow } from "./other";
 
@@ -105,7 +101,7 @@ export const overrides = (palette: Palette): Overrides => {
       paper: {
         minWidth: 320,
         boxShadow: defaultShadow,
-        backgroundColor: white,
+        backgroundColor: palette.common.white,
       },
       paperWidthSm: {
         maxWidth: 680,
@@ -243,7 +239,7 @@ export const overrides = (palette: Palette): Overrides => {
         width: "20em"
       },
       outlined: {
-        background: "white",
+        background: palette.common.white,
         boxShadow: `0 0 3px 0 rgba(0,27,58,0.10)`,
       },
     },
@@ -291,7 +287,7 @@ export const overrides = (palette: Palette): Overrides => {
         opacity: .7,
         backgroundColor: lightPink,
         "&$selected": {
-          color: white,
+          color: palette.common.white,
           backgroundColor: palette.primary.dark,
           fontWeight: 500,
           fontSize: "1em",

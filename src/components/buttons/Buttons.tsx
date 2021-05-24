@@ -393,21 +393,11 @@ const useMenuIconButtonStyles = makeStyles((theme) => ({
     border: `1px solid ${theme.palette.divider}`,
     backgroundColor: theme.palette.common.white,
     boxShadow: defaultShadow,
-    mozTransition: "all .2s linear",
-    "-o-transition": "all .2s linear",
-    "-webkit-transition": "all .2s linear",
-    transition: "all .2s linear",
-    backgroundSize: "300% 100%",
     "&:hover": {
       backgroundColor: theme.customColors.lightPink,
       "@media (hover: none)": {
         backgroundColor: "transparent",
       },
-      backgroundPosition: "100% 0",
-      "moz-transition": "all .2s linear",
-      "-o-transition": "all .2s linear",
-      "-webkit-transition": "all .2s linear",
-      transition: "all .2s linear",
     },
   },
   label: {

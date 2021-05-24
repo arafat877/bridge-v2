@@ -1,10 +1,8 @@
 /* Moonbeam Colors */
-export const gradient = "linear-gradient(to right, #E1147B, #3D1D5A, #53CBC9)";
 export const pink = "#E1147B";
 export const lightPink = "#EA5AA2";
-export const purple = "#3D1D5A";
-export const yellow = "#F2A007";
 
+/* Common Colors */
 export const skyBlueLighter = "#F1F7FE";
 export const skyBlueLight = "#DAEBFF";
 export const skyBlue = "#C1DEFF";

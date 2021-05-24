@@ -12,9 +12,8 @@ import {
 
 const basePalette = {
   primary: {
-    light: "#F2A007", //yellow
-    main: "#53CBC9", // 53CBC9 // 3D1D5A
-    dark: "#001933",
+    main: "#53CBC9", // teal
+    dark: "#001933", // navy
     contrastText: white,
   },
   secondary: {
