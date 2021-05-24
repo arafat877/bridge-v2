@@ -8,6 +8,7 @@ import {
 import classNames from "classnames";
 import React, { FunctionComponent } from "react";
 import { useShakingStyles } from "../../theme/animationUtils";
+import { lightPink } from "../../theme/colors";
 
 const useBridgePaperStyles = makeStyles((theme) => {
   return {
@@ -15,6 +16,7 @@ const useBridgePaperStyles = makeStyles((theme) => {
       maxWidth: 550,
       margin: "1em",
       position: "relative",
+      border: `1px solid ${lightPink}`
     },
   };
 });

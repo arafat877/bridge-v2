@@ -2,6 +2,7 @@ import React, { FunctionComponent, useCallback, useState } from "react";
 import { makeStyles } from "@material-ui/core";
 import classNames from "classnames";
 import { defaultShadow } from "../../theme/other";
+import { lightPink } from "../../theme/colors";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: defaultShadow,
     margin: "1em",
     overflow: "scroll",
+    border: `1px solid ${lightPink}`
   },
   wrapper: {
     background: "gray",

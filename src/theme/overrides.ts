@@ -287,7 +287,7 @@ export const overrides = (palette: Palette): Overrides => {
         fontSize: 16,
       },
       textColorInherit: {
-        color: palette.primary.dark,
+        color: palette.common.white,
         opacity: .7,
         backgroundColor: lightPink,
         "&$selected": {
